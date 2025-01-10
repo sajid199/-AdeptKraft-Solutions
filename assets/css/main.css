@@ -1114,6 +1114,21 @@ section,
   margin-bottom: 0;
 }
 
+.services .service-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.services .service-item ul li {
+  font-family: var(--default-font);
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  color: var(--default-color);
+}
+
 .services .service-item:hover {
   box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
 }
@@ -1472,7 +1487,6 @@ section,
 .testimonials .testimonial-item h4 {
   font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 0;
 }
 
 .testimonials .testimonial-item .stars {
