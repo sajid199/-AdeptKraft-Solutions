@@ -1,0 +1,55 @@
+/* Diversity Sourcing Section Styles */
+.diversity-sourcing {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.diversity-sourcing .section-title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.diversity-sourcing .diversity-content,
+.diversity-sourcing .diversity-highlights {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.diversity-sourcing .diversity-content:hover,
+.diversity-sourcing .diversity-highlights:hover {
+  transform: translateY(-10px);
+}
+
+.diversity-sourcing .diversity-content h3,
+.diversity-sourcing .diversity-highlights h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.diversity-sourcing .diversity-highlights ul {
+  padding: 0;
+}
+
+.diversity-sourcing .diversity-highlights ul li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  color: #34495e;
+}
+
+.diversity-sourcing .diversity-highlights ul li i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .diversity-sourcing .diversity-content,
+  .diversity-sourcing .diversity-highlights {
+    margin-bottom: 20px;
+  }
+}
