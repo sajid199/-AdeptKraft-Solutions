@@ -2682,3 +2682,61 @@ section,
     margin-right: 10px;
   }
 }
+#services .service-item {
+  text-align: center; /* Center-align all content */
+  padding: 20px;
+  background: #ffffff; /* White background for better contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#services .service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#services .service-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+#services .service-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+#services .service-item .icon {
+  margin-bottom: 15px;
+}
+
+#services .service-item .icon i {
+  font-size: 2.5rem;
+  color: inherit; /* Inherit color from parent for easy customization */
+}
+
+#services .item-cyan .icon i {
+  color: #17a2b8; /* Cyan for sourcing */
+}
+
+#services .item-orange .icon i {
+  color: #fd7e14; /* Orange for screening */
+}
+
+#services .item-teal .icon i {
+  color: #20c997; /* Teal for coordination */
+}
+
+#services .item-red .icon i {
+  color: #dc3545; /* Red for urgency (contractual hiring) */
+}
+
+#services .item-indigo .icon i {
+  color: #6610f2; /* Indigo for permanence */
+}
+
+#services .item-pink .icon i {
+  color: #e83e8c; /* Pink for recruitment strategy */
+}
