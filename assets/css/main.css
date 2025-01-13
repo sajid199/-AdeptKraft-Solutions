@@ -2641,7 +2641,7 @@ section,
   font-size: 14px;
 }/* Hero Carousel Improvements */
 .hero .carousel-item .container {
-  max-width: 100%;
+  max-width: 70%;
   text-align: left;
 }
 
