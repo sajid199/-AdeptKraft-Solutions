@@ -165,7 +165,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 55px;
   margin-right: 8px;
 }
 
@@ -839,7 +839,6 @@ section,
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 50px;
-  border-top: 4px solid var(--accent-color);
   z-index: 3;
 }
 
@@ -2642,12 +2641,12 @@ section,
   font-size: 14px;
 }/* Hero Carousel Improvements */
 .hero .carousel-item .container {
-  max-width: 800px;
+  max-width: 100%;
   text-align: left;
 }
 
 .hero .carousel-item h2 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 25px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -2655,7 +2654,7 @@ section,
 }
 
 .hero .carousel-item p {
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
