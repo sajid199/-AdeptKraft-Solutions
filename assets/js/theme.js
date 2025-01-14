@@ -57,6 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
       htmlRoot.classList.add('dark-theme');
       htmlRoot.classList.remove('light-theme');
 
+      themeIcon.classList.remove('bi-sun-fill');
+      themeIcon.classList.add('bi-moon-fill');
+
+      localStorage.setItem('site-theme', 'dark');
+      document.body.classList.add('dark-background');
+      document.body.classList.remove('light-background');
+
+      // Apply dark theme to services section
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = 'var(--service-background)';
+        servicesSection.style.color = 'var(--service-text)';
+      }
+
       // Update service items
       document.querySelectorAll('.service-item').forEach(item => {
         item.style.backgroundColor = 'var(--service-item-bg)';
@@ -75,10 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.style.color = 'var(--service-link)';
       });
 
-      localStorage.setItem('site-theme', 'dark');
-      document.body.classList.add('dark-background');
-      document.body.classList.remove('light-background');
-
     } else {
       // Apply light theme colors
       Object.entries(lightThemeColors).forEach(([key, value]) => {
@@ -87,6 +97,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       htmlRoot.classList.remove('dark-theme');
       htmlRoot.classList.add('light-theme');
+
+      themeIcon.classList.remove('bi-moon-fill');
+      themeIcon.classList.add('bi-sun-fill');
+
+      localStorage.setItem('site-theme', 'light');
+      document.body.classList.remove('dark-background');
+      document.body.classList.add('light-background');
+
+      // Reset services section to light theme
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = 'var(--service-background)';
+        servicesSection.style.color = 'var(--service-text)';
+      }
 
       // Reset service items
       document.querySelectorAll('.service-item').forEach(item => {
@@ -105,77 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.service-link').forEach(link => {
         link.style.color = 'var(--service-link)';
       });
-
-      localStorage.setItem('site-theme', 'light');
-      document.body.classList.remove('dark-background');
-      document.body.classList.add('light-background');
     }
   }
-
-  // Improved theme toggle positioning and styling
-  function createProfessionalThemeToggle() {
-    // Remove existing theme toggle if it exists
-    const existingToggle = document.querySelector('.theme-toggle-container');
-    if (existingToggle) {
-      existingToggle.remove();
-    }
-
-    // Create a more professional theme toggle container
-    const toggleContainer = document.createElement('div');
-    toggleContainer.className = 'theme-toggle-container';
-    toggleContainer.innerHTML = `
-      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
-        <svg id="theme-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon">
-          <path id="theme-icon-path" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
-    `;
-
-    // Position the toggle in the top-right corner of the header
-    const header = document.getElementById('header');
-    if (header) {
-      toggleContainer.style.position = 'absolute';
-      toggleContainer.style.top = '15px';
-      toggleContainer.style.right = '15px';
-      header.appendChild(toggleContainer);
-    }
-
-    // Add event listener to the new toggle button
-    const toggleBtn = document.getElementById('theme-toggle-btn');
-    const themeToggleIcon = document.getElementById('theme-toggle-icon');
-    const themeIconPath = document.getElementById('theme-icon-path');
-
-    // Function to update icon based on theme
-    function updateThemeIcon(theme) {
-      if (theme === 'dark') {
-        // Moon icon for dark mode
-        themeIconPath.setAttribute('d', 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
-        themeToggleIcon.setAttribute('fill', 'currentColor');
-      } else {
-        // Sun icon for light mode
-        themeIconPath.setAttribute('d', 'M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42');
-        themeToggleIcon.setAttribute('fill', 'none');
-      }
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      const currentTheme = htmlRoot.classList.contains('dark-theme') ? 'dark' : 'light';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      // Update theme
-      setTheme(newTheme);
-      
-      // Update icon
-      updateThemeIcon(newTheme);
-    });
-
-    // Initial icon setup based on current theme
-    const initialTheme = htmlRoot.classList.contains('dark-theme') ? 'dark' : 'light';
-    updateThemeIcon(initialTheme);
-  }
-
-  // Call the function to create professional theme toggle
-  createProfessionalThemeToggle();
 
   // Initial theme setup
   const savedTheme = localStorage.getItem('site-theme');
@@ -188,6 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     setTheme('light');
   }
+
+  // Theme toggle event listener
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlRoot.classList.contains('dark-theme') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  });
 
   // Listen for system theme changes
   prefersDarkScheme.addListener((e) => {
