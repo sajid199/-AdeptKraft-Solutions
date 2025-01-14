@@ -41,7 +41,6 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
-      
       <div class="container d-flex align-items-center justify-content-between">
         <!-- Logo Section -->
         <div class="d-flex align-items-center">
@@ -51,18 +50,22 @@
             <p class="m-0 text-success" style="font-size: 1rem;">"Where talent meets opportunities"</p>
           </div>
         </div>
-      
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="ourvision.html">Our Vision</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
 
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="ourvision.html">Our Vision</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <button class="theme-toggle" aria-label="Toggle Theme">
+            <i class="bi bi-sun-fill" id="theme-icon"></i>
+          </button>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
     </div>
   </header>
 
@@ -112,35 +115,35 @@
 
     </section><!-- /Hero Section -->
     <!-- About Section -->
-        <section class="about-section">
-            <div class="container">
-                <div class="row align-items-center gy-4">
-                    <!-- Image Column -->
-                    <div class="col-lg-6 about-img">
-                        <img src="./assets/img/about.jpg" alt="About our company" class="img-fluid">
-                    </div>
-                    
-                    <!-- Content Column -->
-                    <div class="col-lg-6 about-content ps-lg-5">
-                        <h2 class="section-title">Where Talent Meets Opportunities</h2>
-                        
-                        <div class="content-wrapper">
-                            <p class="highlight-text">
-                                Revolutionize the way your organization approaches human resource management with our expertly crafted solutions. We deliver a full range of customized services designed to address the specific challenges and opportunities your business faces.
-                            </p>
-                            
-                            <p class="content-text mb-4">
-                                From sourcing top talent and optimizing workforce management to enhancing employee engagement and ensuring regulatory compliance, we provide the tools and strategies to help your business excel.
-                            </p>
-                            
-                            <p class="content-text">
-                                Our unwavering focus on innovation and excellence ensures your HR practices are not only streamlined but also adaptable to the evolving demands of the industry. By partnering with us, you'll unlock new levels of productivity, foster a thriving workplace culture, and set your organization on a path to sustainable success. Together, we'll turn your workforce into your greatest asset.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <section class="about-section">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <!-- Image Column -->
+          <div class="col-lg-6 about-img">
+            <img src="./assets/img/about.jpg" alt="About our company" class="img-fluid">
+          </div>
+
+          <!-- Content Column -->
+          <div class="col-lg-6 about-content ps-lg-5">
+            <h2 class="section-title">Where Talent Meets Opportunities</h2>
+
+            <div class="content-wrapper">
+              <p class="highlight-text">
+                Revolutionize the way your organization approaches human resource management with our expertly crafted solutions. We deliver a full range of customized services designed to address the specific challenges and opportunities your business faces.
+              </p>
+
+              <p class="content-text mb-4">
+                From sourcing top talent and optimizing workforce management to enhancing employee engagement and ensuring regulatory compliance, we provide the tools and strategies to help your business excel.
+              </p>
+
+              <p class="content-text">
+                Our unwavering focus on innovation and excellence ensures your HR practices are not only streamlined but also adaptable to the evolving demands of the industry. By partnering with us, you'll unlock new levels of productivity, foster a thriving workplace culture, and set your organization on a path to sustainable success. Together, we'll turn your workforce into your greatest asset.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- /About Section -->
     <!-- Services Section -->
     <section id="services" class="services section light-background">
@@ -149,7 +152,7 @@
           <h2 class="section-title">Our HR Services</h2>
           <p class="section-subtitle">Comprehensive solutions to transform your workforce management</p>
         </div>
-    
+
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative text-center">
@@ -163,7 +166,7 @@
               <a href="services.html" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-    
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative text-center">
               <div class="service-icon mb-3">
@@ -176,7 +179,7 @@
               <a href="services.html" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-    
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative text-center">
               <div class="service-icon mb-3">
@@ -256,6 +259,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <!-- Theme Toggle JS -->
+  <script src="assets/js/theme.js"></script>
 
 </body>
 
