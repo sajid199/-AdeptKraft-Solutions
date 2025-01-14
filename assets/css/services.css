@@ -158,3 +158,166 @@
         margin-bottom: 30px;
     }
 }
+
+/* Dark Theme Adjustments for Services Section */
+.dark-theme .services,
+.dark-theme .diversity-sourcing {
+  background-color: var(--background-color);
+}
+
+.dark-theme .section-title {
+  color: var(--heading-color);
+}
+
+.dark-theme .section-header .lead {
+  color: var(--default-color);
+}
+
+.dark-theme .service-card,
+.dark-theme .diversity-sourcing .diversity-content,
+.dark-theme .diversity-sourcing .diversity-highlights {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .service-card h3,
+.dark-theme .diversity-sourcing .diversity-content h3,
+.dark-theme .diversity-sourcing .diversity-highlights h3 {
+  color: var(--heading-color);
+}
+
+.dark-theme .service-card p,
+.dark-theme .diversity-sourcing .diversity-content p,
+.dark-theme .diversity-sourcing .diversity-highlights p {
+  color: var(--default-color);
+}
+
+.dark-theme .service-icon {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.dark-theme .diversity-sourcing .diversity-highlights ul li {
+  color: var(--default-color);
+}
+
+.dark-theme .diversity-sourcing .diversity-highlights ul li i {
+  color: var(--accent-color);
+}
+
+/* Dark Theme Adjustments for Regions Section */
+.dark-theme .regions {
+  background-color: var(--background-color);
+}
+
+.dark-theme .regions .section-title h2 {
+  color: var(--heading-color);
+}
+
+.dark-theme .regions .section-title p {
+  color: var(--default-color);
+}
+
+.dark-theme .region-card {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.dark-theme .region-card h3 {
+  color: var(--heading-color);
+  margin-bottom: 15px;
+}
+
+.dark-theme .region-card h3 i {
+  color: var(--accent-color);
+  margin-right: 10px;
+}
+
+.dark-theme .region-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dark-theme .region-card ul li {
+  color: var(--default-color);
+  padding: 5px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.dark-theme .region-card ul li:last-child {
+  border-bottom: none;
+}
+
+.dark-theme .region-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Theme Adjustments for Service Cards */
+.dark-theme .service-card {
+  background-color: var(--surface-color);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.dark-theme .service-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2rem;
+}
+
+.dark-theme .service-title {
+  color: var(--heading-color);
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.dark-theme .service-description {
+  color: var(--default-color);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.dark-theme .service-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.dark-theme .service-link i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.dark-theme .service-link:hover {
+  color: color-mix(in srgb, var(--accent-color), white 20%);
+}
+
+.dark-theme .service-link:hover i {
+  transform: translateX(5px);
+}
+
+.dark-theme .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+}

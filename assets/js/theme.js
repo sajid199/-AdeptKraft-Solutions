@@ -6,16 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dark theme color variables
   const darkThemeColors = {
     '--background-color': '#121212',
-    '--default-color': '#e0e0e0',
+    '--default-color': '#e0e0e0', // Slightly lighter for better readability
     '--heading-color': '#ffffff',
     '--accent-color': '#4CAF50',
     '--surface-color': '#1e1e1e',
-    '--contrast-color': '#000000',
-    '--nav-color': '#e0e0e0',
+    '--contrast-color': '#ffffff', // Changed to white for better contrast
+    '--nav-color': '#f0f0f0', // Lighter nav text for better visibility
     '--nav-hover-color': '#4CAF50',
     '--nav-mobile-background-color': '#121212',
     '--nav-dropdown-background-color': '#1e1e1e',
-    '--nav-dropdown-color': '#e0e0e0'
+    '--nav-dropdown-color': '#f0f0f0' // Lighter dropdown text
   };
 
   // Light theme color variables (default from CSS)
