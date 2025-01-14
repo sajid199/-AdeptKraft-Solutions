@@ -861,6 +861,21 @@ section,
   margin-bottom: 50px;
   z-index: 3;
 }
+.theme-toggle {
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.theme-toggle i {
+  font-size: 1.5rem; /* Adjust the icon size if needed */
+  color: #cf8524;      /* Change the icon color */
+}
+
+.theme-toggle:hover i {
+  color: #ffcc00;    /* Add hover effect for better interactivity */
+}
+
 
 @media (max-width: 1200px) {
   .hero .container {
