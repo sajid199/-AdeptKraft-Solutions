@@ -30,20 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
     '--background-color': '#ffffff',
     '--default-color': '#444444',
     '--heading-color': '#111111',
-    '--accent-color': '#1bbd36',
+    '--accent-color': '#c7a536',
     '--surface-color': '#ffffff',
     '--contrast-color': '#ffffff',
     '--nav-color': '#444444',
-    '--nav-hover-color': '#1bbd36',
+    '--nav-hover-color': '#c7a536',
     '--nav-mobile-background-color': '#ffffff',
     '--nav-dropdown-background-color': '#ffffff',
     '--nav-dropdown-color': '#444444',
     // Add services section light theme colors
     '--service-background': '#ffffff',
     '--service-text': '#444444',
-    '--service-icon': '#1bbd36',
+    '--service-icon': '#c7a536',
     '--service-title': '#111111',
-    '--service-link': '#1bbd36',
+    '--service-link': '#c7a536',
     '--service-item-bg': '#ffffff'
   };
 
