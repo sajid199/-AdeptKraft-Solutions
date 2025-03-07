@@ -36,7 +36,92 @@
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #c7a536; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
+/* Dark Theme Styles */
+.dark-theme {
+  --background-color: #121212;
+  --default-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --accent-color: #4CAF50;
+  --surface-color: #1e1e1e;
+  --contrast-color: #ffffff;
+  --nav-color: #f0f0f0;
+  --nav-hover-color: #4CAF50;
+  --nav-mobile-background-color: #121212;
+  --nav-dropdown-background-color: #1e1e1e;
+  --nav-dropdown-color: #f0f0f0;
+  --service-background: #1e1e1e;
+  --service-text: #e0e0e0;
+  --service-icon: #4CAF50;
+  --service-title: #ffffff;
+  --service-link: #4CAF50;
+  --service-item-bg: #2d2d2d;
+}
 
+/* Light Theme Styles */
+.light-theme {
+  --background-color: #ffffff;
+  --default-color: #444444;
+  --heading-color: #111111;
+  --accent-color: #c7a536;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+  --nav-color: #444444;
+  --nav-hover-color: #c7a536;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #444444;
+  --service-background: #ffffff;
+  --service-text: #444444;
+  --service-icon: #c7a536;
+  --service-title: #111111;
+  --service-link: #c7a536;
+  --service-item-bg: #ffffff;
+}
+
+/* Apply dark theme to specific sections */
+.dark-theme .header {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+}
+
+.dark-theme .challenges-solutions-section {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+}
+
+.dark-theme .workflow-content {
+  background-color: var(--service-item-bg);
+  color: var(--service-text);
+}
+
+.dark-theme .workflow-number {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.dark-theme .workflow-line {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--default-color),
+    var(--default-color) 10px,
+    transparent 10px,
+    transparent 15px
+  );
+}
+
+/* Ensure text is readable in dark theme */
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6 {
+  color: var(--heading-color);
+}
+
+.dark-theme p {
+  color: var(--default-color);
+}
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
