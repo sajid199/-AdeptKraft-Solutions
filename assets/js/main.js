@@ -43,7 +43,6 @@
         mobileNavToogle();
       }
     });
-
   });
 /**
  * Function to display hexagonal figures one by one with a continuous fade-in effect

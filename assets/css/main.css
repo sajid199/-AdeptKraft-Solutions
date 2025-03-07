@@ -65,6 +65,46 @@
 :root {
   scroll-behavior: smooth;
 }
+/* Stats Section Styles */
+.stats-section {
+  padding: 60px 0;
+  background-color: var(--surface-color);
+}
+
+.stat-circle {
+  width: 250px; /* Adjust size as needed */
+  height: 250px; /* Adjust size as needed */
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--contrast-color);
+  margin-bottom: 10px;
+}
+
+.stat-description {
+  font-size: 0.9rem;
+  color: var(--contrast-color);
+  line-height: 1.4;
+  margin: 0;
+}
 /* Theme Toggle Positioning */
 @media (min-width: 992px) {
   .theme-toggle {
