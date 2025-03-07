@@ -91,7 +91,175 @@
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
+/* Challenges & Solutions Section */
+/* Challenges & Solutions Section */
+.challenges-solutions-section {
+  padding: 80px 0;
+  background-color: var(--surface-color);
+}
 
+.challenges-solutions-section .section-header {
+  margin-bottom: 60px;
+}
+
+.challenges-solutions-section .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.challenges-solutions-section .section-subtitle {
+  font-size: 1.2rem;
+  color: var(--default-color);
+}
+
+/* Challenges */
+.challenges {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.challenge-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.challenge-item:hover {
+  transform: translateX(10px);
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.challenge-item:hover .circle {
+  background-color: #2c5282; /* Darker shade for hover */
+}
+
+/* Divider */
+.divider {
+  height: 2px;
+  background-color: var(--default-color);
+  width: 50px;
+  margin: 2rem auto;
+}
+
+/* Solutions Workflow */
+.workflow {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.workflow-item {
+  display: flex;
+  position: relative;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.workflow-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.workflow-item:last-child {
+  margin-bottom: 0;
+}
+
+.workflow-number {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.workflow-item:hover .workflow-number {
+  background-color: #2c5282; /* Darker shade for hover */
+}
+
+.workflow-content {
+  background-color: white;
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+  transition: box-shadow 0.3s ease;
+}
+
+.workflow-item:hover .workflow-content {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.workflow-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.workflow-content p {
+  font-size: 0.9rem;
+  color: var(--default-color);
+  line-height: 1.5;
+}
+
+.workflow-line {
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--default-color),
+    var(--default-color) 10px,
+    transparent 10px,
+    transparent 15px
+  );
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .workflow-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .workflow-line {
+    left: 25px;
+  }
+}
 .stat-value {
   font-size: 2.5rem;
   font-weight: 700;

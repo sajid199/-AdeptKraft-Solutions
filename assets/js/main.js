@@ -50,6 +50,30 @@
 /**
  * Function to display hexagonal figures one by one with a continuous fade-in effect
  */
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Function to add the "visible" class to workflow items when they are in the viewport
+function animateWorkflowItems() {
+  const workflowItems = document.querySelectorAll('.workflow-item');
+  workflowItems.forEach((item) => {
+    if (isInViewport(item)) {
+      item.classList.add('visible');
+    }
+  });
+}
+
+// Add event listeners for scroll and load
+window.addEventListener('scroll', animateWorkflowItems);
+window.addEventListener('load', animateWorkflowItems);
 function displayHexagons() {
   const hexagons = document.querySelectorAll('.hexagon');
   let index = 0;
