@@ -79,7 +79,44 @@
     outline: none;
   }
 }
+.question-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
 
+.hexagon {
+  position: relative;
+  width: 200px; /* Adjust size as needed */
+  height: 115.47px; /* Height for a regular hexagon */
+  background-color: #64C7CC; /* Hexagon color */
+  margin: 57.74px 0; /* Spacing between hexagons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  opacity: 0; /* Initially hidden */
+  transform: scale(0.8); /* Slightly smaller for animation */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+.hexagon .question-item {
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+
+.hexagon .question-item i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hexagon .question-item h2 {
+  font-size: 16px;
+  margin: 0;
+}
 /* Ensure visibility and spacing for theme toggle */
 .theme-toggle {
   display: flex;
@@ -2678,7 +2715,29 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
-}/* Hero Carousel Improvements */
+}
+
+/* Question Section Styles */
+.question-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.question-item i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: var(--accent-color);
+}
+
+.question-item h2 {
+  font-size: 18px;
+  color: var(--default-color);
+}
+
+/* Hero Carousel Improvements */
 .hero .carousel-item .container {
   max-width: 70%;
   text-align: left;

@@ -45,7 +45,42 @@
     });
 
   });
+/**
+ * Function to display hexagonal figures one by one with a continuous fade-in effect
+ */
+function displayHexagons() {
+  const hexagons = document.querySelectorAll('.hexagon');
+  let index = 0;
 
+  function showNextHexagon() {
+      if (index < hexagons.length) {
+          hexagons[index].style.opacity = '1';
+          hexagons[index].style.transform = 'scale(1)';
+          index++;
+      } else {
+          // Reset and restart the animation
+          hexagons.forEach(hex => {
+              hex.style.opacity = '0';
+              hex.style.transform = 'scale(0.8)';
+          });
+          index = 0;
+      }
+      setTimeout(showNextHexagon, 1000); // Adjust timing as needed
+  }
+
+  // Initially hide all hexagons
+  hexagons.forEach(hex => {
+      hex.style.opacity = '0';
+      hex.style.transform = 'scale(0.8)';
+      hex.style.transition = 'opacity 1s ease, transform 1s ease';
+  });
+
+  // Start the animation
+  showNextHexagon();
+}
+
+// Call the displayHexagons function on page load
+window.addEventListener('load', displayHexagons);
   /**
    * Toggle mobile nav dropdowns
    */
@@ -190,5 +225,28 @@
   }
 
   window.addEventListener("load", initSwiper);
+
+  /**
+   * Function to display questions one by one with fade-in effect
+   */
+  function displayQuestions() {
+    const questions = document.querySelectorAll('.question-item');
+    let index = 0;
+
+    function showNextQuestion() {
+      if (index < questions.length) {
+        questions[index].style.opacity = '1';
+        index++;
+        setTimeout(showNextQuestion, 2000); // Change question every 2 seconds
+      }
+    }
+
+    // Initially hide all questions
+    questions.forEach(q => q.style.opacity = '0');
+    showNextQuestion();
+  }
+
+  // Call the displayQuestions function on page load
+  window.addEventListener('load', displayQuestions);
 
 })();
