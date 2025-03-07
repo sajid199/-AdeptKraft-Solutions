@@ -48,6 +48,9 @@
 /**
  * Function to display hexagonal figures one by one with a continuous fade-in effect
  */
+/**
+ * Function to display hexagonal figures one by one with a continuous fade-in effect
+ */
 function displayHexagons() {
   const hexagons = document.querySelectorAll('.hexagon');
   let index = 0;
@@ -57,15 +60,9 @@ function displayHexagons() {
           hexagons[index].style.opacity = '1';
           hexagons[index].style.transform = 'scale(1)';
           index++;
-      } else {
-          // Reset and restart the animation
-          hexagons.forEach(hex => {
-              hex.style.opacity = '0';
-              hex.style.transform = 'scale(0.8)';
-          });
-          index = 0;
+          setTimeout(showNextHexagon, 1000); // Adjust timing as needed
       }
-      setTimeout(showNextHexagon, 1000); // Adjust timing as needed
+      // Stop the loop once all hexagons are displayed
   }
 
   // Initially hide all hexagons
