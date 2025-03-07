@@ -40,21 +40,30 @@
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/ak Logo Black.png" alt="Company Logo" class="img-fluid logo-img me-3" style="max-height: 90px; max-width: 180px; object-fit: contain; margin-left: 25px;">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto" style="text-align: left; padding: 20px;">
+        <img src="assets/img/ak_TransParent.png" alt="Company Logo" class="img-fluid logo-img" style="max-height: 50px; max-width: 180px; object-fit: contain; margin-right: 15px; transition: transform 0.2s;">
+        <div>
+          <h1 class="mb-0" style="font-family: 'Playfair Display', serif; font-weight: 550;text-transform: none;">AdeptKraft</h1>
+          <p class="mb-0" style="font-size: 14px; font-family: 'Georgia', serif; color: #555;">Krafting Careers, Powering Businesses</p>
+        </div>
       </a>
+      <style>
+        .logo-img:hover {
+          transform: scale(1.05);
+        }
+      </style>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li ><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="ourvision.html">Our Vision</a></li>
-          <li><a class="active" href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        <button class="theme-toggle" aria-label="Toggle Theme"><i class="bi bi-sun" id="theme-icon"></i></button>
-      </nav>
+      <button class="theme-toggle" aria-label="Toggle Theme"><i class="bi bi-sun" id="theme-icon"></i></button></nav>
     </div>
   </header>
 
