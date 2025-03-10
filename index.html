@@ -49,12 +49,6 @@
           <p class="mb-0" style="font-size: 14px; font-family: 'Georgia', serif; color: #555;">Krafting Careers, Powering Businesses</p>
         </div>
       </a>
-      <style>
-        .logo-img:hover {
-          transform: scale(1.05);
-        }
-      </style>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li ><a href="index.html" class="active">Home</a></li>
@@ -71,28 +65,61 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section class="question-container">
-      <div class="hexagon">
-          <div class="question-item">
-              <h2>Do you want to reduce your time-to-fill?</h2>
-          </div>
+<!-- Questions Carousel Section -->
+<section id="questions-carousel" class="questions-carousel-section">
+  <div class="container">
+    <div id="questionsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#questionsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#questionsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#questionsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#questionsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
       </div>
-      <div class="hexagon">
-          <div class="question-item">
-              <h2>Tired of interviewing too many candidates?</h2>
+
+      <!-- Carousel Slides -->
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-content text-center">
+            <h2 class="carousel-question">Do you want to reduce your time-to-fill?</h2>
           </div>
-      </div>
-      <div class="hexagon">
-          <div class="question-item">
-              <h2>Struggling to find technical and cultural-fit candidates?</h2>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="carousel-content text-center">
+            <h2 class="carousel-question">Tired of interviewing too many candidates?</h2>
           </div>
-      </div>
-      <div class="hexagon">
-          <div class="question-item">
-              <h2>Ready to partner with industry experts?</h2>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="carousel-content text-center">
+            <h2 class="carousel-question">Struggling to find technical and cultural-fit candidates? </h2>
           </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+          <div class="carousel-content text-center">
+            <h2 class="carousel-question">Ready to partner with industry experts?</h2>
+          </div>
+        </div>
       </div>
-  </section>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#questionsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#questionsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
     <!-- /Hero Section -->
     <!-- About Section -->
     <section class="about-section">

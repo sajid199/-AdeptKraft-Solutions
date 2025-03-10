@@ -171,7 +171,65 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+/* Questions Carousel Section */
+.questions-carousel-section {
+  padding: 10px 0;
+  background-color: var(--surface-color);
+}
 
+.carousel-content {
+  padding: 60px 20px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-question {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+}
+
+.carousel-subtext {
+  font-size: 1.2rem;
+  color: var(--default-color);
+  margin-bottom: 0;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--default-color);
+  opacity: 0.5;
+}
+
+.carousel-indicators .active {
+  background-color: var(--accent-color);
+  opacity: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  color: var(--accent-color);
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-control-prev-icon:before,
+.carousel-control-next-icon:before {
+  color: var(--contrast-color);
+}
 .stat-circle:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -372,44 +430,6 @@
     outline: none;
   }
 }
-.question-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.hexagon {
-  position: relative;
-  width: 200px; /* Adjust size as needed */
-  height: 115.47px; /* Height for a regular hexagon */
-  background-color: #64C7CC; /* Hexagon color */
-  margin: 57.74px 0; /* Spacing between hexagons */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  opacity: 0; /* Initially hidden */
-  transform: scale(0.8); /* Slightly smaller for animation */
-  transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
-}
-
-.hexagon .question-item {
-  text-align: center;
-  color: white;
-  padding: 10px;
-}
-
-.hexagon .question-item i {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.hexagon .question-item h2 {
-  font-size: 16px;
-  margin: 0;
-}
 /* Ensure visibility and spacing for theme toggle */
 .theme-toggle {
   display: flex;
@@ -445,7 +465,9 @@ h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
 }
-
+.logo-img:hover {
+  transform: scale(1.05);
+}
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -1322,22 +1344,6 @@ section,
   color: var(--default-color);
 }
 
-.hero .carousel-indicators li {
-  cursor: pointer;
-  background: var(--default-color);
-  overflow: hidden;
-  border: 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 50px;
-  opacity: 0.6;
-  transition: 0.3s;
-}
-
-.hero .carousel-indicators li.active {
-  opacity: 1;
-  background: var(--accent-color);
-}
 
 /*--------------------------------------------------------------
 # About Section

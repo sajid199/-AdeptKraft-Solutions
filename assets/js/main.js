@@ -60,6 +60,12 @@ function isInViewport(element) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+// Initialize the carousel with autoplay
+const questionsCarousel = new bootstrap.Carousel('#questionsCarousel', {
+  interval: 2000, // Change slide every 5 seconds
+  pause: 'hover', // Pause on hover
+  wrap: true // Loop the carousel
+});
 
 // Function to add the "visible" class to workflow items when they are in the viewport
 function animateWorkflowItems() {
@@ -74,33 +80,9 @@ function animateWorkflowItems() {
 // Add event listeners for scroll and load
 window.addEventListener('scroll', animateWorkflowItems);
 window.addEventListener('load', animateWorkflowItems);
-function displayHexagons() {
-  const hexagons = document.querySelectorAll('.hexagon');
-  let index = 0;
 
-  function showNextHexagon() {
-      if (index < hexagons.length) {
-          hexagons[index].style.opacity = '1';
-          hexagons[index].style.transform = 'scale(1)';
-          index++;
-          setTimeout(showNextHexagon, 1000); // Adjust timing as needed
-      }
-      // Stop the loop once all hexagons are displayed
-  }
-
-  // Initially hide all hexagons
-  hexagons.forEach(hex => {
-      hex.style.opacity = '0';
-      hex.style.transform = 'scale(0.8)';
-      hex.style.transition = 'opacity 1s ease, transform 1s ease';
-  });
-
-  // Start the animation
-  showNextHexagon();
-}
 
 // Call the displayHexagons function on page load
-window.addEventListener('load', displayHexagons);
   /**
    * Toggle mobile nav dropdowns
    */
@@ -160,15 +142,6 @@ window.addEventListener('load', displayHexagons);
   /**
    * Auto generate the carousel indicators
    */
-  document.querySelectorAll('.carousel-indicators').forEach((carouselIndicator) => {
-    carouselIndicator.closest('.carousel').querySelectorAll('.carousel-item').forEach((carouselItem, index) => {
-      if (index === 0) {
-        carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}" class="active"></li>`;
-      } else {
-        carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}"></li>`;
-      }
-    });
-  });
 
   /**
    * Initiate glightbox
