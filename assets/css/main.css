@@ -19,7 +19,7 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --background-color: #121212; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #111111; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #c7a536; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
@@ -38,6 +38,7 @@
 }
 /* Dark Theme Styles */
 .dark-theme {
+  
   --background-color: #121212;
   --default-color: #e0e0e0;
   --heading-color: #ffffff;
@@ -1749,11 +1750,6 @@ section,
   font-family: var(--heading-font);
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
 .skills .progress-bar-wrap {
   background: color-mix(in srgb, var(--default-color), transparent 90%);
   height: 10px;
@@ -2523,10 +2519,6 @@ section,
   margin: 0;
 }
 
-.blog-details .meta-top ul li+li {
-  padding-left: 20px;
-}
-
 .blog-details .meta-top i {
   font-size: 16px;
   margin-right: 8px;
@@ -3135,4 +3127,39 @@ section,
 
 #services .item-pink .icon i {
   color: #e83e8c; /* Pink for recruitment strategy */
+}
+#hero {
+    background: url('your-hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#expertise, #services, #industries, #contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.icons, .industry-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.icon {
+    margin: 10px;
+    font-size: 24px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
 }
