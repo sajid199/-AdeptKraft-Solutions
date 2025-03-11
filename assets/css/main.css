@@ -36,6 +36,9 @@
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #c7a536; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
+.text-primary {
+  color: #c7a536 !important;
+}
 /* Dark Theme Styles */
 .dark-theme {
   
@@ -109,6 +112,32 @@
     transparent 15px
   );
 }
+.accordion-item {
+  background-color: var(--surface-color); /* Ensures background adapts to theme */
+  color: var(--default-color);            /* Ensures text color adapts */
+}
+
+.accordion-button {
+  background-color: var(--surface-color); 
+  color: var(--default-color);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--service-item-bg);  /* Expanded background fix */
+  color: var(--service-text);                /* Expanded text fix */
+  border-bottom: 1px solid var(--accent-color); /* Optional: Highlight active accordion */
+}
+
+.accordion-body {
+  background-color: var(--surface-color); 
+  color: var(--default-color);
+}
+/* Accordion icon color for dark theme */
+.accordion-button::after {
+  filter: invert(1); /* Inverts the color to white in dark mode */
+  opacity: 0.8;      /* Ensures visibility without being too bright */
+}
+
 
 /* Ensure text is readable in dark theme */
 .dark-theme h1,

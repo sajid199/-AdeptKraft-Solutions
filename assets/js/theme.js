@@ -131,6 +131,52 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+  // Apply dark theme for service cards
+document.querySelectorAll('.service-card').forEach(card => {
+  card.style.backgroundColor = 'var(--service-item-bg)';
+  card.style.color = 'var(--service-text)';
+});
+
+// Apply dark theme for accordion items
+document.querySelectorAll('.accordion-item').forEach(item => {
+  item.style.backgroundColor = 'var(--surface-color)';
+  item.style.color = 'var(--default-color)';
+});
+
+// Apply dark theme for metric cards
+document.querySelectorAll('.metric-card').forEach(metric => {
+  metric.style.backgroundColor = 'var(--surface-color)';
+  metric.style.color = 'var(--default-color)';
+});
+document.querySelectorAll('.accordion-item').forEach(item => {
+  item.style.backgroundColor = 'var(--surface-color)';
+  item.style.color = 'var(--default-color)';
+});
+
+
+document.querySelectorAll('.accordion-body').forEach(body => {
+  body.style.backgroundColor = 'var(--surface-color)';
+  body.style.color = 'var(--default-color)';
+});
+document.querySelectorAll('.accordion-item').forEach(item => {
+  item.style.backgroundColor = 'var(--surface-color)';
+  item.style.color = 'var(--default-color)';
+});
+
+document.querySelectorAll('.accordion-button').forEach(button => {
+  button.classList.add('dark-theme');
+});
+
+document.querySelectorAll('.accordion-button').forEach(button => {
+  button.classList.remove('dark-theme');
+});
+
+document.querySelectorAll('.accordion-body').forEach(body => {
+  body.style.backgroundColor = 'var(--surface-color)';
+  body.style.color = 'var(--default-color)';
+});
+
+
 
   // Initial theme setup
   const savedTheme = localStorage.getItem('site-theme');
