@@ -99,10 +99,37 @@ window.addEventListener('load', animateWorkflowItems);
    * Preloader
    */
   const preloader = document.querySelector('#preloader');
+
   if (preloader) {
+    console.log('Preloader found');
+  
+    // Remove preloader when the page is fully loaded
     window.addEventListener('load', () => {
-      preloader.remove();
+      console.log('Page fully loaded');
+      setTimeout(() => {
+        preloader.style.transition = 'opacity 0.5s';
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.remove();
+          console.log('Preloader removed');
+        }, 500); // Wait for the fade-out transition to complete
+      }, 500); // Delay before starting the fade-out
     });
+  
+    // Fallback in case `window.load` fails
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOM fully loaded');
+      setTimeout(() => {
+        preloader.style.transition = 'opacity 0.5s';
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.remove();
+          console.log('Preloader removed (fallback)');
+        }, 500); // Wait for the fade-out transition to complete
+      }, 2000); // Extra delay for better stability
+    });
+  } else {
+    console.log('Preloader not found');
   }
 
   /**
@@ -244,11 +271,16 @@ window.addEventListener('load', animateWorkflowItems);
 
 })();
 // Smooth scrolling for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+// Initialize the carousel with autoplay
+const questionsCarousel = new bootstrap.Carousel('#questionsCarousel', {
+  interval: 2000, // Change slide every 5 seconds
+  pause: 'hover', // Pause on hover
+  wrap: true // Loop the carousel
 });
+/**
+ * Preloader Fix
+ */
+
+
+
+
