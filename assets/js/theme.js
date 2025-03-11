@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.querySelector('.theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
   const htmlRoot = document.documentElement;
+  const headerLogo = document.querySelector('.logo-img'); // Select the header logo
+
+  // Set logo paths for different themes
+  const logoPathDark = "assets/img/white.png"; // Path for dark theme logo
+  const logoPathLight = "assets/img/ak_TransParent.png"; // Path for light theme logo
 
   // Dark theme color variables
   const darkThemeColors = {
@@ -64,6 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('dark-background');
       document.body.classList.remove('light-background');
 
+      // Change logo for dark theme
+      if (headerLogo) {
+        headerLogo.src = logoPathDark;
+      }
+
       // Apply dark theme to services section
       const servicesSection = document.getElementById('services');
       if (servicesSection) {
@@ -105,6 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('dark-background');
       document.body.classList.add('light-background');
 
+      // Change logo for light theme
+      if (headerLogo) {
+        headerLogo.src = logoPathLight;
+      }
+
       // Reset services section to light theme
       const servicesSection = document.getElementById('services');
       if (servicesSection) {
@@ -132,49 +147,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   // Apply dark theme for service cards
-document.querySelectorAll('.service-card').forEach(card => {
-  card.style.backgroundColor = 'var(--service-item-bg)';
-  card.style.color = 'var(--service-text)';
-});
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.style.backgroundColor = 'var(--service-item-bg)';
+    card.style.color = 'var(--service-text)';
+  });
 
-// Apply dark theme for accordion items
-document.querySelectorAll('.accordion-item').forEach(item => {
-  item.style.backgroundColor = 'var(--surface-color)';
-  item.style.color = 'var(--default-color)';
-});
+  // Apply dark theme for accordion items
+  document.querySelectorAll('.accordion-item').forEach(item => {
+    item.style.backgroundColor = 'var(--surface-color)';
+    item.style.color = 'var(--default-color)';
+  });
 
-// Apply dark theme for metric cards
-document.querySelectorAll('.metric-card').forEach(metric => {
-  metric.style.backgroundColor = 'var(--surface-color)';
-  metric.style.color = 'var(--default-color)';
-});
-document.querySelectorAll('.accordion-item').forEach(item => {
-  item.style.backgroundColor = 'var(--surface-color)';
-  item.style.color = 'var(--default-color)';
-});
+  // Apply dark theme for metric cards
+  document.querySelectorAll('.metric-card').forEach(metric => {
+    metric.style.backgroundColor = 'var(--surface-color)';
+    metric.style.color = 'var(--default-color)';
+  });
+  document.querySelectorAll('.accordion-item').forEach(item => {
+    item.style.backgroundColor = 'var(--surface-color)';
+    item.style.color = 'var(--default-color)';
+  });
 
 
-document.querySelectorAll('.accordion-body').forEach(body => {
-  body.style.backgroundColor = 'var(--surface-color)';
-  body.style.color = 'var(--default-color)';
-});
-document.querySelectorAll('.accordion-item').forEach(item => {
-  item.style.backgroundColor = 'var(--surface-color)';
-  item.style.color = 'var(--default-color)';
-});
+  document.querySelectorAll('.accordion-body').forEach(body => {
+    body.style.backgroundColor = 'var(--surface-color)';
+    body.style.color = 'var(--default-color)';
+  });
+  document.querySelectorAll('.accordion-item').forEach(item => {
+    item.style.backgroundColor = 'var(--surface-color)';
+    item.style.color = 'var(--default-color)';
+  });
 
-document.querySelectorAll('.accordion-button').forEach(button => {
-  button.classList.add('dark-theme');
-});
+  document.querySelectorAll('.accordion-button').forEach(button => {
+    button.classList.add('dark-theme');
+  });
 
-document.querySelectorAll('.accordion-button').forEach(button => {
-  button.classList.remove('dark-theme');
-});
+  document.querySelectorAll('.accordion-button').forEach(button => {
+    button.classList.remove('dark-theme');
+  });
 
-document.querySelectorAll('.accordion-body').forEach(body => {
-  body.style.backgroundColor = 'var(--surface-color)';
-  body.style.color = 'var(--default-color)';
-});
+  document.querySelectorAll('.accordion-body').forEach(body => {
+    body.style.backgroundColor = 'var(--surface-color)';
+    body.style.color = 'var(--default-color)';
+  });
 
 
 
