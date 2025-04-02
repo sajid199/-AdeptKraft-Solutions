@@ -1359,7 +1359,7 @@ section,
   outline: none;
   cursor: pointer;
   padding: 0;
-  margin: 0 0 0 15px; /* Added left margin */
+  margin: 0 0 0 8px; /* Added left margin */
   display: flex;
   align-items: center;
   justify-content: center;
