@@ -1380,7 +1380,7 @@ section,
   background: none;
   outline: none;
   cursor: pointer;
-  margin-left: 15px; /* Added left margin */
+  margin-left: 6px; /* Added left margin */
 }
 
 .theme-toggle i {
