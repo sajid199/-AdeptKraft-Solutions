@@ -12,9 +12,29 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Nunito",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Nunito", sans-serif;
+  
+  /* Standardized Font Sizes */
+  --font-size-xs: 0.875rem;    /* 14px */
+  --font-size-sm: 1rem;        /* 16px */
+  --font-size-base: 1.125rem;  /* 18px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.5rem;      /* 24px */
+  --font-size-2xl: 2rem;       /* 32px */
+  --font-size-3xl: 2.5rem;     /* 40px */
+  
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -35,7 +55,11 @@
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #c7a536; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-padding: 0.5rem 1rem; /* Consistent padding for nav items */
+  --nav-font-size: var(--font-size-sm); /* Consistent font size for nav items */
+  --nav-transition: all 0.3s ease; /* Smooth transition for all nav interactions */
 }
+
 .text-primary {
   color: #c7a536 !important;
 }
@@ -522,6 +546,9 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
@@ -544,8 +571,10 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
   font-family: var(--heading-font);
+  color: var(--heading-color);
+  line-height: var(--line-height-tight);
+  margin-bottom: 1rem;
 }
 .logo-img:hover {
   transform: scale(1.05);
@@ -683,6 +712,8 @@ h6 {
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
+    display: flex;
+    align-items: center;
   }
 
   .navmenu ul {
@@ -691,6 +722,7 @@ h6 {
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 0.5rem; /* Consistent spacing between items */
   }
 
   .navmenu li {
@@ -699,21 +731,22 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    text-transform: none; /* Allow natural casing */
-    font-weight: 500; /* Set a consistent font weight */
-    padding: 10px 15px; /* Add padding for better spacing */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    text-transform: none;
+    font-weight: var(--font-weight-medium);
+    padding: var(--nav-padding);
+    transition: var(--nav-transition);
     color: var(--nav-color);
-    font-size: 13px;
+    font-size: var(--nav-font-size);
     font-family: var(--nav-font);
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
+    border-radius: 4px; /* Subtle rounded corners */
   }
 
   .navmenu a::first-letter {
-    text-transform: uppercase; /* Capitalize first letter only */
+    text-transform: uppercase;
   }
 
   .navmenu a i,
@@ -721,17 +754,18 @@ h6 {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
-    transition: 0.3s;
+    transition: var(--nav-transition);
   }
 
   .navmenu li:last-child a {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
   }
 
   .navmenu .dropdown ul {
@@ -744,10 +778,11 @@ h6 {
     left: 14px;
     top: 130%;
     opacity: 0;
-    transition: 0.3s;
+    transition: var(--nav-transition);
     border-radius: 4px;
     z-index: 99;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
   }
 
   .navmenu .dropdown ul li {
@@ -756,9 +791,10 @@ h6 {
 
   .navmenu .dropdown ul a {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: var(--nav-font-size);
     text-transform: none;
     color: var(--nav-dropdown-color);
+    border-radius: 0;
   }
 
   .navmenu .dropdown ul a::first-letter {
@@ -771,11 +807,12 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -787,7 +824,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -808,7 +845,7 @@ h6 {
     line-height: 0;
     margin-right: 10px;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: var(--nav-transition);
   }
 
   .navmenu {
@@ -826,7 +863,7 @@ h6 {
     border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
     overflow-y: auto;
-    transition: 0.3s;
+    transition: var(--nav-transition);
     z-index: 9998;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
@@ -834,15 +871,16 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-dropdown-color);
-    padding: 10px 20px;
+    padding: var(--nav-padding);
     font-family: var(--nav-font);
-    font-size: 17px;
-    font-weight: 500;
+    font-size: var(--nav-font-size);
+    font-weight: var(--font-weight-medium);
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
-    transition: 0.3s;
+    transition: var(--nav-transition);
+    border-radius: 4px;
   }
 
   .navmenu a::first-letter {
@@ -860,7 +898,7 @@ h6 {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: 0.3s;
+    transition: var(--nav-transition);
     background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
@@ -874,6 +912,7 @@ h6 {
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-dropdown-hover-color);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
   }
 
   .navmenu .active i,
@@ -892,14 +931,15 @@ h6 {
     background-color: var(--nav-dropdown-background-color);
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     box-shadow: none;
-    transition: all 0.5s ease-in-out;
+    transition: var(--nav-transition);
+    border-radius: 4px;
   }
 
   .navmenu .dropdown ul ul {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -989,10 +1029,9 @@ h6 {
 }
 
 .footer h4 {
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  padding-bottom: 12px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 1.5rem;
 }
 
 .footer .footer-links {
@@ -1230,17 +1269,15 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 3px;
-  position: relative;
+  margin-bottom: 3rem;
 }
 
 .section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  padding-bottom: 20px;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem;
   position: relative;
+  padding-bottom: 1rem;
 }
 
 .section-title h2:after {
@@ -1257,7 +1294,10 @@ section,
 }
 
 .section-title p {
-  margin-bottom: 10px;
+  font-size: var(--font-size-base);
+  color: var(--default-color);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
@@ -1315,19 +1355,42 @@ section,
 }
 .theme-toggle {
   background: none;
+  border: none;
   outline: none;
   cursor: pointer;
+  padding: 0;
+  margin: 0 0 0 15px; /* Added left margin */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .theme-toggle i {
-  font-size: 1.5rem; /* Adjust the icon size if needed */
-  color: #cf8524;      /* Change the icon color */
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
 }
 
 .theme-toggle:hover i {
-  color: #ffcc00;    /* Add hover effect for better interactivity */
+  color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+/* Remove any existing theme toggle styles */
+.theme-toggle {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 15px; /* Added left margin */
+}
+
+.theme-toggle i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.theme-toggle:hover i {
+  color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
 
 @media (max-width: 1200px) {
   .hero .container {
@@ -1534,6 +1597,49 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services {
+  padding: 60px 0;
+  background-color: var(--background-color);
+}
+
+.services .section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services .section-title h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 1rem;
+  font-family: var(--heading-font);
+  letter-spacing: 0.5px;
+}
+
+.services .section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.services .section-title p {
+  font-size: var(--font-size-base);
+  color: var(--default-color);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: var(--line-height-relaxed);
+  font-family: var(--default-font);
+}
+
 .services .service-item {
   background-color: var(--surface-color);
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
@@ -1542,137 +1648,72 @@ section,
   text-align: center;
   transition: 0.3s;
   border-radius: 5px;
-}
-
-.services .service-item .icon {
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
   position: relative;
-}
-
-.services .service-item .icon i {
-  font-size: 36px;
-  transition: 0.5s;
-  position: relative;
-}
-
-.services .service-item .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.services .service-item .icon svg path {
-  transition: 0.5s;
-  fill: color-mix(in srgb, var(--default-color), transparent 95%);
+  overflow: hidden;
 }
 
 .services .service-item h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
+  font-weight: var(--font-weight-bold);
+  margin: 20px 0 15px 0;
+  font-size: var(--font-size-lg);
+  color: var(--heading-color);
+  position: relative;
+  z-index: 2;
+  font-family: var(--heading-font);
+  letter-spacing: 0.3px;
 }
 
 .services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
   margin-bottom: 0;
+  color: var(--default-color);
+  position: relative;
+  z-index: 2;
+  font-family: var(--default-font);
 }
 
 .services .service-item ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 20px 0 0 0;
   text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
 .services .service-item ul li {
   font-family: var(--default-font);
-  font-size: 14px;
-  line-height: 24px;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
   margin-bottom: 8px;
   color: var(--default-color);
+  display: flex;
+  align-items: center;
 }
 
-.services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+.services .service-item ul li i {
+  color: var(--accent-color);
+  margin-right: 8px;
+  font-size: 14px;
 }
 
-.services .service-item.item-cyan i {
-  color: #0dcaf0;
-}
-
-.services .service-item.item-cyan:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-cyan:hover .icon path {
-  fill: #0dcaf0;
-}
-
-.services .service-item.item-orange i {
-  color: #fd7e14;
-}
-
-.services .service-item.item-orange:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-orange:hover .icon path {
-  fill: #fd7e14;
-}
-
-.services .service-item.item-teal i {
-  color: #20c997;
-}
-
-.services .service-item.item-teal:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-teal:hover .icon path {
-  fill: #20c997;
-}
-
-.services .service-item.item-red i {
-  color: #df1529;
-}
-
-.services .service-item.item-red:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-red:hover .icon path {
-  fill: #df1529;
-}
-
-.services .service-item.item-indigo i {
-  color: #6610f2;
-}
-
-.services .service-item.item-indigo:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-indigo:hover .icon path {
-  fill: #6610f2;
-}
-
-.services .service-item.item-pink i {
-  color: #f3268c;
-}
-
-.services .service-item.item-pink:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-pink:hover .icon path {
-  fill: #f3268c;
+@media (max-width: 768px) {
+  .services .service-item {
+    padding: 40px 20px;
+  }
+  
+  .services .service-item h3 {
+    font-size: var(--font-size-base);
+  }
+  
+  .services .service-item p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .services .service-item ul li {
+    font-size: var(--font-size-xs);
+  }
 }
 
 /*--------------------------------------------------------------
